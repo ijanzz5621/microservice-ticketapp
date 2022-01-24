@@ -5,10 +5,10 @@ deploy:
     manifests:
       - ./infra/k8s/*
 build:
-  googleCloudBuild:
-    projectId: ticketapp-dev-339202
+  local:
+    push: false # do not push local build to docker-hub (default behavior)
   artifacts:
-    - image: us.gcr.io/ticketapp-dev-339202/auth
+    - image: ijanzz5621/micsvc-ticket-auth
       context: auth
       docker:
         dockerfile: Dockerfile
